@@ -51,7 +51,7 @@ impl Worker {
             let job = receiver
                 .lock()
                 .expect("unpoisoned mutex")
-                .recv()
+                .recv() // https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv
                 .unwrap();
 
             println!("Worker {id} got a job, executing.");
