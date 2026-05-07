@@ -45,6 +45,7 @@ impl Drop for ThreadPool {
         drop(self.sender.take());
         for worker in &mut self.workers {
             println!("Shutting down worker {}", worker.id);
+            // https://doc.rust-lang.org/std/option/enum.Option.html#method.take
             if let Some(thread) = worker.thread.take() {
                 thread.join().unwrap();
             }
