@@ -13,7 +13,7 @@ fn main() {
     let pool = ThreadPool::new(4);
 
     // https://doc.rust-lang.org/beta/std/net/struct.TcpListener.html#method.incoming
-    for stream in listener.incoming().take(2) {
+    for stream in listener.incoming().take(2) { // https://doc.rust-lang.org/std/iter/trait.Iterator.html#method.take
         let stream = stream.unwrap();
 
         pool.execute(|| {
