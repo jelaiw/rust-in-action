@@ -7,6 +7,7 @@ dark square is a picture feverishly turned--in search of what?
 It is the same with books. What do we seek through millions of pages?";
 
     for line in quote.lines() {
+        // https://docs.rs/regex/latest/regex/struct.Regex.html#method.find
         let contains_substring = re.find(line);
         match contains_substring {
             Some(_) => println!("{line}"),
