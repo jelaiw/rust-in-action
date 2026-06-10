@@ -8,10 +8,7 @@ fn main() {
 
     // A subtle behavior change occurs here. BufReader::lines()
     // removes the trailing newline character from each line.
-    for line_ in reader.lines() {
-        // Unwraps the Result, but at the risk of crashing the
-        // program if an error occurs.
-        let line = line_.unwrap();
+    for line in reader.lines().map(|x| x.unwrap()) { // Unwraps the Result, but at the risk of crashing the program if an error occurs.
         println!("{} ({} bytes long)", line, line.len());
     }
 }
