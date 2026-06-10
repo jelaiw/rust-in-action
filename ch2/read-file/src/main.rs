@@ -1,5 +1,7 @@
 use std::fs::File;
 use std::io::BufReader;
+// BufRead, Read, Seek, and Write traits.
+// https://doc.rust-lang.org/std/io/prelude/index.html
 use std::io::prelude::*;
 
 fn main() {
