@@ -23,6 +23,6 @@ fn main() {
         println!("{} ({} bytes long)", line, len);
         // Shrinks the String back to length 0, preventing lines from persisting
         // into the following ones.
-        line.truncate(0);
+        line.truncate(0); // https://doc.rust-lang.org/std/string/struct.String.html#method.truncate
     }
 }
