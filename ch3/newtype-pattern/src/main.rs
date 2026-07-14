@@ -1,3 +1,4 @@
+// See Klabnik & Nichols (2023) sections in ch. 19 for more on newtype pattern.
 struct Hostname(String);
 
 fn connect(host: Hostname) {
