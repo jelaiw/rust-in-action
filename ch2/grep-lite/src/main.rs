@@ -40,7 +40,9 @@ fn main() {
     let input = args.value_of("input").unwrap_or("-");
 
     if input == "-" {
+        // https://doc.rust-lang.org/std/io/fn.stdin.html
         let stdin = io::stdin();
+        // https://doc.rust-lang.org/std/io/struct.Stdin.html#method.lock
         let reader = stdin.lock();
         process_lines(reader, re);
     }
