@@ -16,10 +16,12 @@ fn close(f: &mut File) -> bool {
 }
 
 fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
+    // Makes a copy of the data here because save_to.append() shrinks the input Vec<T>.
     let mut tmp = f.data.clone();
     let read_length = tmp.len();
 
     save_to.reserve(read_length);
+    // https://doc.rust-lang.org/std/vec/struct.Vec.html#method.append
     save_to.append(&mut tmp);
     read_length
 }
